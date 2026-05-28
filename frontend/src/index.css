@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.55) rgba(15, 12, 30, 0.6);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(15, 12, 30, 0.6);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.75), rgba(99, 102, 241, 0.55));
+  border-radius: 999px;
+  border: 2px solid rgba(15, 12, 30, 0.6);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(192, 132, 252, 0.95), rgba(129, 140, 248, 0.75));
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply rounded-[1.75rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-card;
+    box-shadow:
+      0 0 0 1px rgba(168, 85, 247, 0.06) inset,
+      0 20px 60px rgba(0, 0, 0, 0.45),
+      0 0 60px rgba(168, 85, 247, 0.04);
+  }
+
+  .glass-panel-hover {
+    @apply transition duration-300 ease-out;
+  }
+
+  .glass-panel-hover:hover {
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 0 0 1px rgba(168, 85, 247, 0.1) inset,
+      0 20px 56px rgba(0, 0, 0, 0.42),
+      0 0 28px rgba(168, 85, 247, 0.09);
+    transform: translateY(-1px);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-fuchsia-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent;
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.16;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  /* Finer second noise layer — subtle film grain */
+  .grain-fine {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.07;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.4' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='0.65'/%3E%3C/svg%3E");
+  }
+
+  .mesh-bg {
+    background-color: #07060f;
+    background-image:
+      radial-gradient(1200px 600px at 10% 10%, rgba(168, 85, 247, 0.17), transparent 55%),
+      radial-gradient(900px 500px at 90% 20%, rgba(99, 102, 241, 0.14), transparent 50%),
+      radial-gradient(800px 500px at 50% 100%, rgba(236, 72, 153, 0.09), transparent 55%);
+  }
+}
