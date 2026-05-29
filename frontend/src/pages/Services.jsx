@@ -31,7 +31,7 @@ const blocks = [
 export default function Services() {
   return (
     <PageShell>
-      <Seo title="Services — Daniel Gallego" description="How I help teams ship modern web products." path="/services" />
+      <Seo title="Services — Joban Kang" description="How I help teams ship modern web products." path="/services" />
       <main className="mx-auto max-w-5xl px-4 py-12 md:px-6 md:py-16">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">Services</p>

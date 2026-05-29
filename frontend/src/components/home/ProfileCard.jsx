@@ -14,18 +14,18 @@ export default function ProfileCard({ variants }) {
         <div className="relative rounded-full bg-gradient-to-br from-fuchsia-500/85 via-purple-500/75 to-indigo-500/85 p-[8px] shadow-[0_0_32px_rgba(168,85,247,0.25)]">
           <img
             src={profileImg}
-            alt="Daniel Gallego"
+            alt="Joban Kang"
             className="h-32 w-32 rounded-full object-cover md:h-36 md:w-36"
           />
         </div>
 
         <div className="max-w-md">
           <h1 className="font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
-            Daniel Gallego
+            Joban Kang
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-slate-300 md:text-base">
-            Creative full-stack engineer crafting fast, accessible interfaces and resilient APIs —
-            focused on polish, performance, and delightful motion.
+          Helping businesses grow through custom websites, engaging videos, creative designs, branding, and performance-focused digital advertising solutions.
+
           </p>
         </div>
       </div>

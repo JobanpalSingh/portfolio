@@ -28,7 +28,7 @@ export default function Testimonials() {
 
   return (
     <PageShell>
-      <Seo title="Testimonials — Daniel Gallego" description="Client and collaborator feedback." path="/testimonials" />
+      <Seo title="Testimonials — Joban Kang" description="Client and collaborator feedback." path="/testimonials" />
       <main className="mx-auto max-w-4xl px-4 py-12 md:px-6 md:py-16">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>

@@ -56,7 +56,7 @@ export default function Projects() {
 
   return (
     <PageShell>
-      <Seo title="Projects — Daniel Gallego" description="Selected engineering and product work." path="/projects" />
+      <Seo title="Projects — Joban Kang" description="Selected engineering and product work." path="/projects" />
       <main className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
         <div className="mb-10">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">Projects</p>

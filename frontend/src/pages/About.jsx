@@ -7,7 +7,7 @@ import GlassButton from '../components/common/GlassButton.jsx';
 export default function About() {
   return (
     <PageShell>
-      <Seo title="About — Daniel Gallego" description="Background, approach, and how I work with teams." path="/about" />
+      <Seo title="About — Joban Kang" description="Background, approach, and how I work with teams." path="/about" />
       <main className="mx-auto max-w-3xl px-4 py-12 md:px-6 md:py-16">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -16,17 +16,12 @@ export default function About() {
           className="glass-panel p-8 md:p-10"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">About</p>
-          <h1 className="mt-3 font-display text-3xl font-bold text-white md:text-4xl">Daniel Gallego</h1>
+          <h1 className="mt-3 font-display text-3xl font-bold text-white md:text-4xl">Joban Kang</h1>
           <p className="mt-4 text-sm leading-relaxed text-slate-300 md:text-base">
-            I am a product-minded engineer who enjoys turning ambiguous problems into crisp roadmaps
-            and shippable software. My work spans React ecosystems, Node services, data modeling, and
-            pragmatic DevOps — always with an eye on user experience, accessibility, and long-term
-            maintainability.
+          With 2 years of professional experience at Digitofy Global Pvt. Ltd., I specialize in helping businesses build a strong digital presence through websites, creative content, and marketing solutions. From custom-coded, React, and WordPress websites to video editing, promotional reels, posters, branding, and advertising campaigns, I deliver solutions that create impact. 
           </p>
           <p className="mt-4 text-sm leading-relaxed text-slate-300 md:text-base">
-            Outside of deep focus blocks, you will find me refining design systems, documenting
-            decisions, and collaborating closely with designers and stakeholders so interfaces feel as
-            good as they look.
+          I believe in quality work, on-time delivery, and clear communication, helping maintain a 99% client satisfaction rate. My goal is simple — turning ideas into professional digital experiences that help businesses grow and stand out.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <GlassButton to="/projects">View projects</GlassButton>

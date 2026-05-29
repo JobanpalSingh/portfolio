@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <PageShell>
       <Seo
-        title="Daniel Gallego — Portfolio"
+        title="Joban Kang — Portfolio"
         description="Futuristic glassmorphism portfolio — projects, services, and contact."
         path="/"
       />

@@ -7,7 +7,7 @@ import ContactForm from '../components/contact/ContactForm.jsx';
 export default function Contact() {
   return (
     <PageShell>
-      <Seo title="Contact — Daniel Gallego" description="Reach out for collaborations and product work." path="/contact" />
+      <Seo title="Contact — Joban Kang" description="Reach out for collaborations and product work." path="/contact" />
       <main className="mx-auto max-w-5xl px-4 py-12 md:px-6 md:py-16">
         <div className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">Contact</p>
@@ -27,7 +27,7 @@ export default function Contact() {
             <div className="flex items-center gap-3 text-sm text-slate-200">
               <Mail className="h-4 w-4 text-purple-300" />
               <a href="mailto:hello@danielgallego.dev" className="transition hover:text-slate-100">
-                hello@danielgallego.dev
+                hello@jobankang.dev
               </a>
             </div>
             <div className="flex items-center gap-3 text-sm text-slate-200">
