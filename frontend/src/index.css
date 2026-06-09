@@ -37,11 +37,11 @@ body {
 
 @layer utilities {
   .glass-panel {
-    @apply rounded-[1.75rem] border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-card;
+    @apply rounded-[1.75rem] border border-white/[0.12] bg-white/[0.06] backdrop-blur-[20px] shadow-card;
     box-shadow:
-      0 0 0 1px rgba(168, 85, 247, 0.06) inset,
-      0 20px 60px rgba(0, 0, 0, 0.45),
-      0 0 60px rgba(168, 85, 247, 0.04);
+      0 0 0 1px rgba(168, 85, 247, 0.08) inset,
+      0 20px 60px rgba(0, 0, 0, 0.5),
+      0 0 48px rgba(168, 85, 247, 0.06);
   }
 
   .glass-panel-hover {
@@ -83,10 +83,11 @@ body {
   }
 
   .mesh-bg {
-    background-color: #07060f;
+    background-color: #06050d;
     background-image:
-      radial-gradient(1200px 600px at 10% 10%, rgba(168, 85, 247, 0.17), transparent 55%),
-      radial-gradient(900px 500px at 90% 20%, rgba(99, 102, 241, 0.14), transparent 50%),
-      radial-gradient(800px 500px at 50% 100%, rgba(236, 72, 153, 0.09), transparent 55%);
+      radial-gradient(1100px 700px at 95% 5%, rgba(139, 92, 246, 0.28), transparent 52%),
+      radial-gradient(900px 550px at 5% 95%, rgba(88, 28, 135, 0.22), transparent 50%),
+      radial-gradient(700px 450px at 15% 20%, rgba(168, 85, 247, 0.12), transparent 55%),
+      radial-gradient(800px 500px at 50% 100%, rgba(236, 72, 153, 0.07), transparent 55%);
   }
 }

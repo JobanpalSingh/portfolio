@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import GlassButton from '../common/GlassButton.jsx';
+import CardSectionHeader from './CardSectionHeader.jsx';
 import { fetchProjects } from '../../api/projects.js';
 import { assetUrl } from '../../api/client.js';
 
@@ -40,34 +41,40 @@ export default function ProjectsPreviewCard({ variants }) {
       className="glass-panel glass-panel-hover flex h-full min-h-0 w-full flex-col justify-between gap-6 p-7 md:p-8"
     >
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">Projects</p>
-        <h2 className="mt-2 font-display text-2xl font-semibold text-white">Selected work</h2>
-        <p className="mt-2 text-sm text-slate-300">
-          A snapshot of shipped products, interfaces, and systems — pulled live from the API when
-          available.
-        </p>
-        <div className="mt-6 flex items-center justify-center gap-3 sm:justify-start">
-          {thumbs.map((src, i) => (
-            <motion.div
-              key={`${src}-${i}`}
-              className="relative h-14 w-14 sm:h-16 sm:w-16"
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.08 * i }}
-              whileHover={{ y: -2, scale: 1.02 }}
-            >
-              <div className="absolute -inset-0.5 rounded-full bg-gradient-to-tr from-purple-500/50 to-fuchsia-500/40 blur-[2px]" />
-              <img
-                src={src}
-                alt=""
-                className="relative h-full w-full rounded-full object-cover ring-2 ring-white/15"
-              />
-            </motion.div>
-          ))}
+        <CardSectionHeader label="Projects" />
+        
+        <p>Lorem ipsum dolor sit elit. Laudantium, soluta.</p>
+        <div className="mt-2 flex items-center gap-1">
+          <div className="flex items-center">
+            {thumbs.slice(0, 3).map((src, i) => (
+              <motion.div
+                key={`${src}-${i}`}
+                className="relative h-14 w-14 sm:h-[4.5rem] sm:w-[4.5rem]"
+                style={{ zIndex: 3 - i }}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.08 * i }}
+                whileHover={{ y: -2, scale: 1.03 }}
+              >
+                <img
+                  src={src}
+                  alt=""
+                  className={`h-full w-full rounded-full object-cover ring-[3px] ring-[#0a0814]/90 ${
+                    i > 0 ? '-ml-5 sm:-ml-6' : ''
+                  }`}
+                />
+              </motion.div>
+            ))}
+          </div>
+          <span className="ml-1 text-xl font-light tracking-tight text-purple-300/75 sm:text-2xl">
+            ++
+          </span>
         </div>
       </div>
       <div>
-        <GlassButton to="/projects">Open Projects Page</GlassButton>
+        <GlassButton to="/projects" variant="gradient">
+          Projects
+        </GlassButton>
       </div>
     </motion.article>
   );

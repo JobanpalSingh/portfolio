@@ -49,12 +49,12 @@ export default function Home() {
         description="Futuristic glassmorphism portfolio — projects, services, and contact."
         path="/"
       />
-      <main className="mx-auto max-w-6xl px-4 pb-24 pt-10 md:px-6 md:pb-28 md:pt-14">
+      <main className="mx-auto max-w-6xl px-4 pb-24 pt-8 md:px-6 md:pb-28 md:pt-10">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-1 gap-5 md:gap-6 lg:grid-cols-12 lg:grid-rows-2 lg:gap-6 lg:items-stretch"
+          className="grid grid-cols-1 gap-5 md:gap-5 lg:grid-cols-12 lg:grid-rows-2 lg:gap-5 lg:items-stretch lg:min-h-[min(72vh,640px)]"
         >
           <div className="flex min-h-0 lg:col-start-1 lg:col-end-5 lg:row-start-1 lg:row-end-3">
             <ProfileCard variants={item} />
