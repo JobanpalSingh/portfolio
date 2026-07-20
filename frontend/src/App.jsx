@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -11,16 +9,9 @@ import Testimonials from './pages/Testimonials.jsx';
 import AdminLogin from './pages/admin/AdminLogin.jsx';
 import AdminDashboard from './pages/admin/AdminDashboard.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
-import LoadingScreen from './components/layout/LoadingScreen.jsx';
 
 export default function App() {
   const location = useLocation();
-  const [booting, setBooting] = useState(true);
-
-  useEffect(() => {
-    const t = setTimeout(() => setBooting(false), 950);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <>
@@ -41,8 +32,6 @@ export default function App() {
           }
         />
       </Routes>
-
-      <AnimatePresence>{booting && <LoadingScreen key="boot" />}</AnimatePresence>
 
       <Toaster
         position="top-center"

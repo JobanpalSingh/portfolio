@@ -56,7 +56,7 @@ function SidebarSectionHeader({ label }) {
     <div className="mb-5">
       <div className="flex items-center gap-2.5">
         <span
-          className="h-3 w-3 shrink-0 rounded-[3px] bg-purple-400 shadow-[0_0_10px_rgba(192,132,252,0.6)]"
+          className="h-3 w-3 shrink-0 rounded-[3px] bg-purple-700 shadow-[0_0_8px_rgba(109,40,217,0.3)]"
           aria-hidden
         />
         <span className="text-sm font-bold uppercase tracking-[0.14em] text-white">{label}</span>
@@ -162,8 +162,8 @@ export default function FloatingMenu() {
             whileTap={{ scale: 0.95 }}
           >
             <span className="flex flex-col items-end gap-[7px]" aria-hidden>
-              <span className="block h-[3px] w-7 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
-              <span className="block h-[3px] w-5 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+              <span className="block h-[3px] w-7 rounded-full bg-purple-700 shadow-[0_0_6px_rgba(109,40,217,0.28)]" />
+              <span className="block h-[3px] w-5 rounded-full bg-purple-700 shadow-[0_0_6px_rgba(109,40,217,0.28)]" />
             </span>
           </motion.button>
         )}
@@ -179,7 +179,7 @@ export default function FloatingMenu() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-              className="fixed inset-y-0 right-0 z-[90] flex h-dvh max-h-dvh min-h-dvh w-[min(21rem,92vw)] flex-col overflow-hidden bg-gradient-to-b from-[#0a0614] via-[#1a0b2e] to-[#6d28d9] pb-[env(safe-area-inset-bottom)] shadow-[-8px_0_48px_rgba(0,0,0,0.5)] sm:w-[min(23rem,92vw)]"
+              className="fixed inset-y-0 right-0 z-[90] flex h-dvh max-h-dvh min-h-dvh w-[min(21rem,92vw)] flex-col overflow-hidden bg-gradient-to-b from-[#0a0614] via-[#12081f] to-[#3b0764] pb-[env(safe-area-inset-bottom)] shadow-[-8px_0_48px_rgba(0,0,0,0.5)] sm:w-[min(23rem,92vw)]"
             >
               <button
                 type="button"

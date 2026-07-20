@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import GlassButton from '../common/GlassButton.jsx';
 import CardSectionHeader from './CardSectionHeader.jsx';
+import { ProjectsPreviewThumbsSkeleton } from '../ui/portfolio-skeletons.jsx';
 import { fetchProjects } from '../../api/projects.js';
 import { assetUrl } from '../../api/client.js';
 
@@ -14,6 +15,7 @@ const fallback = [
 
 export default function ProjectsPreviewCard({ variants }) {
   const [thumbs, setThumbs] = useState(fallback);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -28,6 +30,8 @@ export default function ProjectsPreviewCard({ variants }) {
         if (!cancelled) setThumbs(merged);
       } catch {
         if (!cancelled) setThumbs(fallback);
+      } finally {
+        if (!cancelled) setLoading(false);
       }
     })();
     return () => {
@@ -42,34 +46,38 @@ export default function ProjectsPreviewCard({ variants }) {
     >
       <div>
         <CardSectionHeader label="Projects" />
-        
+
         <p>Lorem ipsum dolor sit elit. Laudantium, soluta.</p>
-        <div className="mt-2 flex items-center gap-1">
-          <div className="flex items-center">
-            {thumbs.slice(0, 3).map((src, i) => (
-              <motion.div
-                key={`${src}-${i}`}
-                className="relative h-14 w-14 sm:h-[4.5rem] sm:w-[4.5rem]"
-                style={{ zIndex: 3 - i }}
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.08 * i }}
-                whileHover={{ y: -2, scale: 1.03 }}
-              >
-                <img
-                  src={src}
-                  alt=""
-                  className={`h-full w-full rounded-full object-cover ring-[3px] ring-[#0a0814]/90 ${
-                    i > 0 ? '-ml-5 sm:-ml-6' : ''
-                  }`}
-                />
-              </motion.div>
-            ))}
+        {loading ? (
+          <ProjectsPreviewThumbsSkeleton />
+        ) : (
+          <div className="mt-2 flex items-center gap-1">
+            <div className="flex items-center">
+              {thumbs.slice(0, 3).map((src, i) => (
+                <motion.div
+                  key={`${src}-${i}`}
+                  className="relative h-14 w-14 sm:h-[4.5rem] sm:w-[4.5rem]"
+                  style={{ zIndex: 3 - i }}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.08 * i }}
+                  whileHover={{ y: -2, scale: 1.03 }}
+                >
+                  <img
+                    src={src}
+                    alt=""
+                    className={`h-full w-full rounded-full object-cover ring-[3px] ring-[#0a0814]/90 ${
+                      i > 0 ? '-ml-5 sm:-ml-6' : ''
+                    }`}
+                  />
+                </motion.div>
+              ))}
+            </div>
+            <span className="ml-1 text-xl font-light tracking-tight text-purple-300/75 sm:text-2xl">
+              ++
+            </span>
           </div>
-          <span className="ml-1 text-xl font-light tracking-tight text-purple-300/75 sm:text-2xl">
-            ++
-          </span>
-        </div>
+        )}
       </div>
       <div>
         <GlassButton to="/projects" variant="gradient">

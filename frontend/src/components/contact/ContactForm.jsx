@@ -70,7 +70,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 py-2.5 text-sm font-semibold text-white shadow-[0_0_22px_rgba(168,85,247,0.18)] transition hover:from-purple-600/92 hover:to-indigo-600/92 disabled:opacity-60"
+        className="w-full rounded-full bg-gradient-to-r from-purple-800 to-indigo-900 py-2.5 text-sm font-semibold text-white/95 shadow-[0_0_16px_rgba(88,28,135,0.12)] transition hover:from-purple-800/90 hover:to-indigo-900/90 disabled:opacity-60"
       >
         {loading ? 'Sending…' : 'Send message'}
       </button>

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Layers, Cpu, Rocket, LineChart } from 'lucide-react';
 import PageShell from '../components/layout/PageShell.jsx';
 import Seo from '../components/common/Seo.jsx';
 import GlassButton from '../components/common/GlassButton.jsx';
+import BackButton from '../components/common/BackButton.jsx';
 
 const blocks = [
   {
@@ -33,13 +33,20 @@ export default function Services() {
     <PageShell>
       <Seo title="Services — Joban Kang" description="How I help teams ship modern web products." path="/services" />
       <main className="mx-auto max-w-5xl px-4 py-12 md:px-6 md:py-16">
-        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">Services</p>
-          <h1 className="mt-2 font-display text-3xl font-bold text-white md:text-4xl">What I deliver</h1>
-          <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
-            Engagements are tailored to your stage — from prototype to production hardening — with
-            transparent communication and incremental delivery.
-          </p>
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
+        >
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">Services</p>
+            <h1 className="mt-2 font-display text-3xl font-bold text-white md:text-4xl">What I deliver</h1>
+            <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
+              Engagements are tailored to your stage — from prototype to production hardening — with
+              transparent communication and incremental delivery.
+            </p>
+          </div>
+          <BackButton />
         </motion.div>
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -58,14 +65,10 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-3">
-          <GlassButton to="/contact">Start a conversation</GlassButton>
-          <Link
-            to="/"
-            className="inline-flex items-center rounded-full border border-white/10 px-5 py-2 text-sm font-semibold text-slate-200 transition hover:border-white/16 hover:bg-white/[0.03] hover:text-slate-100"
-          >
-            Back home
-          </Link>
+        <div className="mt-10">
+          <GlassButton to="/contact" variant="gradient">
+            Start a conversation
+          </GlassButton>
         </div>
       </main>
     </PageShell>

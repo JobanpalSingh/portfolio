@@ -1,16 +1,37 @@
 import { motion } from 'framer-motion';
+import {
+  Briefcase,
+  HeartHandshake,
+  FolderKanban,
+  Layers,
+  GraduationCap,
+  Megaphone,
+  Clapperboard,
+  Building2,
+  Laptop,
+  Code2,
+  Globe,
+  Palette,
+  Film,
+  PenTool,
+  Search,
+  FileText,
+  Target,
+  PackageCheck,
+} from 'lucide-react';
 import PageShell from '../components/layout/PageShell.jsx';
 import Seo from '../components/common/Seo.jsx';
+import BackButton from '../components/common/BackButton.jsx';
 import AboutSectionHeader from '../components/about/AboutSectionHeader.jsx';
 import HighlightCard from '../components/about/HighlightCard.jsx';
 import TimelineCard from '../components/about/TimelineCard.jsx';
 import StrengthBar from '../components/about/StrengthBar.jsx';
 
 const HIGHLIGHTS = [
-  { duration: '2 Years', title: 'Digitofy Global' },
-  { duration: '99%', title: 'Client Satisfaction' },
-  { duration: '50+', title: 'Projects Delivered' },
-  { duration: 'Full Stack', title: 'Web & Marketing' },
+  { duration: '2 Years', title: 'Digitofy Global', icon: Briefcase },
+  { duration: '99%', title: 'Client Satisfaction', icon: HeartHandshake },
+  { duration: '50+', title: 'Projects Delivered', icon: FolderKanban },
+  { duration: 'Full Stack', title: 'Web & Marketing', icon: Layers },
 ];
 
 const EDUCATION = [
@@ -18,16 +39,19 @@ const EDUCATION = [
     title: 'Bachelor of Technology',
     description:
       'Focused on computer science fundamentals, software development, and digital systems design.',
+    icon: GraduationCap,
   },
   {
     title: 'Digital Marketing Certification',
     description:
       'Training in performance ads, audience targeting, campaign analytics, and brand growth.',
+    icon: Megaphone,
   },
   {
     title: 'Creative Media Workshop',
     description:
       'Hands-on learning in video editing, motion graphics, and visual storytelling for brands.',
+    icon: Clapperboard,
   },
 ];
 
@@ -36,25 +60,27 @@ const EXPERIENCE = [
     title: 'Digitofy Global Pvt. Ltd.',
     description:
       'Building custom websites, promotional content, branding assets, and ad campaigns for clients across industries.',
+    icon: Building2,
   },
   {
     title: 'Freelance Digital Creator',
     description:
       'Delivering React and WordPress sites, reels, posters, and end-to-end marketing solutions for growing businesses.',
+    icon: Laptop,
   },
 ];
 
 const STRENGTHS = [
-  'React',
-  'WordPress',
-  'UI Design',
-  'Video Editing',
-  'Branding',
-  'SEO',
-  'Ads',
-  'Content',
-  'Strategy',
-  'Delivery',
+  { label: 'React', icon: Code2 },
+  { label: 'WordPress', icon: Globe },
+  { label: 'UI Design', icon: Palette },
+  { label: 'Video Editing', icon: Film },
+  { label: 'Branding', icon: PenTool },
+  { label: 'SEO', icon: Search },
+  { label: 'Ads', icon: Megaphone },
+  { label: 'Content', icon: FileText },
+  { label: 'Strategy', icon: Target },
+  { label: 'Delivery', icon: PackageCheck },
 ];
 
 const container = {
@@ -82,8 +108,12 @@ export default function About() {
           className="space-y-14 md:space-y-20"
         >
           <section>
-            <motion.div variants={item}>
-              <AboutSectionHeader label="About" />
+            <motion.div
+              variants={item}
+              className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
+            >
+              <AboutSectionHeader label="About" className="mb-0" />
+              <BackButton className="shrink-0 self-start sm:self-auto" />
             </motion.div>
 
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
@@ -93,6 +123,7 @@ export default function About() {
                     key={h.title}
                     duration={h.duration}
                     title={h.title}
+                    icon={h.icon}
                     variants={item}
                   />
                 ))}
@@ -129,6 +160,7 @@ export default function About() {
                     key={entry.title}
                     title={entry.title}
                     description={entry.description}
+                    icon={entry.icon}
                     variants={item}
                   />
                 ))}
@@ -145,6 +177,7 @@ export default function About() {
                     key={entry.title}
                     title={entry.title}
                     description={entry.description}
+                    icon={entry.icon}
                     variants={item}
                   />
                 ))}
@@ -165,8 +198,6 @@ export default function About() {
             client satisfaction rate. My goal is simple: turning ideas into professional digital
             experiences that help businesses grow and stand out in competitive markets.
           </motion.p>
-
-
         </motion.div>
       </main>
     </PageShell>

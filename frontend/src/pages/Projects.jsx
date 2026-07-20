@@ -4,7 +4,9 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Github, ChevronRight } from 'lucide-react';
 import PageShell from '../components/layout/PageShell.jsx';
 import Seo from '../components/common/Seo.jsx';
+import BackButton from '../components/common/BackButton.jsx';
 import ProjectDetailModal from '../components/projects/ProjectDetailModal.jsx';
+import { ProjectsGridSkeleton } from '../components/ui/portfolio-skeletons.jsx';
 import { fetchProjects } from '../api/projects.js';
 import { assetUrl } from '../api/client.js';
 
@@ -58,17 +60,20 @@ export default function Projects() {
     <PageShell>
       <Seo title="Projects — Joban Kang" description="Selected engineering and product work." path="/projects" />
       <main className="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-16">
-        <div className="mb-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">Projects</p>
-          <h1 className="mt-2 font-display text-3xl font-bold text-white md:text-4xl">Work archive</h1>
-          <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
-            Cards show excerpt, timeline, and a read-more control. Click anywhere on a card or use Read more for the
-            full story, gallery, and video.
-          </p>
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-300/80">Projects</p>
+            <h1 className="mt-2 font-display text-3xl font-bold text-white md:text-4xl">Work archive</h1>
+            <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
+              Cards show excerpt, timeline, and a read-more control. Click anywhere on a card or use Read more for the
+              full story, gallery, and video.
+            </p>
+          </div>
+          <BackButton />
         </div>
 
         {loading ? (
-          <p className="text-sm text-slate-400">Loading projects…</p>
+          <ProjectsGridSkeleton />
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {items.map((p, i) => (

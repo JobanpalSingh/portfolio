@@ -67,13 +67,13 @@ export default function ParticleCanvas() {
           wrap(p);
         }
 
-        const twinkle = 0.42 + Math.sin(p.phase) * 0.38;
-        const alpha = 0.12 + twinkle * 0.5;
+        const twinkle = 0.28 + Math.sin(p.phase) * 0.22;
+        const alpha = 0.06 + twinkle * 0.28;
 
         const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 5);
-        g.addColorStop(0, `hsla(${p.hue}, 92%, 76%, ${alpha})`);
-        g.addColorStop(0.4, `hsla(${p.hue}, 80%, 58%, ${alpha * 0.35})`);
-        g.addColorStop(1, `hsla(${p.hue}, 70%, 40%, 0)`);
+        g.addColorStop(0, `hsla(${p.hue}, 55%, 58%, ${alpha})`);
+        g.addColorStop(0.4, `hsla(${p.hue}, 48%, 42%, ${alpha * 0.3})`);
+        g.addColorStop(1, `hsla(${p.hue}, 40%, 30%, 0)`);
         ctx.beginPath();
         ctx.fillStyle = g;
         ctx.arc(p.x, p.y, p.r * 5, 0, Math.PI * 2);

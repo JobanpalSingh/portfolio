@@ -10,16 +10,16 @@ export default {
       colors: {
         night: '#07060f',
         violet: {
-          glow: '#a855f7',
-          deep: '#4c1d95',
+          glow: '#7c3aed',
+          deep: '#3b0764',
         },
       },
       backgroundImage: {
         'grid-glow':
-          'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(168,85,247,0.35), transparent), radial-gradient(ellipse 60% 40% at 100% 0%, rgba(139,92,246,0.2), transparent)',
+          'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(109,40,217,0.18), transparent), radial-gradient(ellipse 60% 40% at 100% 0%, rgba(91,33,182,0.12), transparent)',
       },
       boxShadow: {
-        neon: '0 0 22px rgba(168,85,247,0.14), inset 0 0 0 1px rgba(255,255,255,0.04)',
+        neon: '0 0 18px rgba(109,40,217,0.08), inset 0 0 0 1px rgba(255,255,255,0.03)',
         card: '0 20px 60px rgba(0,0,0,0.45)',
       },
     },

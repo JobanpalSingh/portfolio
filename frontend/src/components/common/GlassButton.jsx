@@ -11,10 +11,10 @@ export default function GlassButton({
   variant = 'glass',
 }) {
   const glass =
-    'inline-flex items-center justify-center gap-2 rounded-full border border-purple-400/25 bg-purple-500/10 px-5 py-2 text-sm font-semibold text-purple-100/95 shadow-[0_0_18px_rgba(168,85,247,0.12)] backdrop-blur-md transition hover:border-purple-400/32 hover:bg-purple-500/14 hover:shadow-[0_0_26px_rgba(168,85,247,0.16)]';
+    'inline-flex items-center justify-center gap-2 rounded-full border border-purple-500/18 bg-purple-900/25 px-5 py-2 text-sm font-semibold text-purple-200/90 shadow-[0_0_14px_rgba(88,28,135,0.08)] backdrop-blur-md transition hover:border-purple-500/25 hover:bg-purple-900/35 hover:shadow-[0_0_18px_rgba(88,28,135,0.12)]';
 
   const gradient =
-    'inline-flex items-center justify-center gap-2 rounded-full border border-purple-500/35 bg-gradient-to-r from-purple-800 via-purple-700 to-purple-900 px-6 py-2.5 text-sm font-semibold text-white shadow-[0_4px_24px_rgba(88,28,135,0.45)] transition hover:from-purple-700 hover:via-purple-600 hover:to-purple-800 hover:shadow-[0_6px_28px_rgba(124,58,237,0.5)]';
+    'inline-flex items-center justify-center gap-2 rounded-full border border-purple-800/40 bg-gradient-to-r from-purple-950 via-purple-900 to-violet-950 px-6 py-2.5 text-sm font-semibold text-purple-50/95 shadow-[0_4px_20px_rgba(46,16,101,0.4)] transition hover:from-purple-900 hover:via-purple-800 hover:to-violet-900 hover:shadow-[0_6px_24px_rgba(76,29,149,0.35)]';
 
   const base = variant === 'gradient' ? gradient : glass;
 

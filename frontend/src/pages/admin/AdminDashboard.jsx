@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { LogOut, Pencil, Plus, Trash2 } from 'lucide-react';
 import PageShell from '../../components/layout/PageShell.jsx';
 import Seo from '../../components/common/Seo.jsx';
+import { AdminStatsSkeleton, AdminTableSkeleton } from '../../components/ui/portfolio-skeletons.jsx';
 import { fetchAdminStats } from '../../api/auth.js';
 import { createProject, deleteProject, fetchProjects, updateProject } from '../../api/projects.js';
 import {
@@ -237,24 +238,28 @@ export default function AdminDashboard() {
           </button>
         </div>
 
-        <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { label: 'Projects', value: stats?.projects ?? '—' },
-            { label: 'Featured', value: stats?.featuredProjects ?? '—' },
-            { label: 'Testimonials', value: stats?.testimonials ?? '—' },
-            { label: 'Contact msgs', value: stats?.messages ?? '—' },
-          ].map((c) => (
-            <motion.div
-              key={c.label}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="glass-panel p-5"
-            >
-              <p className="text-xs uppercase tracking-wide text-purple-300/80">{c.label}</p>
-              <p className="mt-2 font-display text-3xl font-bold text-white">{loading ? '…' : c.value}</p>
-            </motion.div>
-          ))}
-        </div>
+        {loading ? (
+          <AdminStatsSkeleton />
+        ) : (
+          <div className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: 'Projects', value: stats?.projects ?? '—' },
+              { label: 'Featured', value: stats?.featuredProjects ?? '—' },
+              { label: 'Testimonials', value: stats?.testimonials ?? '—' },
+              { label: 'Contact msgs', value: stats?.messages ?? '—' },
+            ].map((c) => (
+              <motion.div
+                key={c.label}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="glass-panel p-5"
+              >
+                <p className="text-xs uppercase tracking-wide text-purple-300/80">{c.label}</p>
+                <p className="mt-2 font-display text-3xl font-bold text-white">{c.value}</p>
+              </motion.div>
+            ))}
+          </div>
+        )}
 
         <section className="mb-12">
           <div className="mb-4 flex items-center justify-between gap-3">
@@ -268,6 +273,9 @@ export default function AdminDashboard() {
               Add
             </button>
           </div>
+          {loading ? (
+            <AdminTableSkeleton rows={4} />
+          ) : (
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
             <table className="min-w-full text-left text-sm text-slate-200">
               <thead className="bg-white/5 text-xs uppercase tracking-wide text-slate-400">
@@ -305,6 +313,7 @@ export default function AdminDashboard() {
               </tbody>
             </table>
           </div>
+          )}
         </section>
 
         <section>
@@ -319,6 +328,9 @@ export default function AdminDashboard() {
               Add
             </button>
           </div>
+          {loading ? (
+            <AdminTableSkeleton rows={3} />
+          ) : (
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
             <table className="min-w-full text-left text-sm text-slate-200">
               <thead className="bg-white/5 text-xs uppercase tracking-wide text-slate-400">
@@ -356,6 +368,7 @@ export default function AdminDashboard() {
               </tbody>
             </table>
           </div>
+          )}
         </section>
 
         <section className="mt-12">
@@ -366,6 +379,9 @@ export default function AdminDashboard() {
               ). This app does not send email — reply using your mail client.
             </p>
           </div>
+          {loading ? (
+            <AdminTableSkeleton rows={3} />
+          ) : (
           <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.03]">
             <table className="min-w-full text-left text-sm text-slate-200">
               <thead className="bg-white/5 text-xs uppercase tracking-wide text-slate-400">
@@ -405,6 +421,7 @@ export default function AdminDashboard() {
               </tbody>
             </table>
           </div>
+          )}
         </section>
       </main>
 

@@ -1,15 +1,13 @@
 import { motion } from 'framer-motion';
 import GlassButton from '../common/GlassButton.jsx';
-
-const profileImg =
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=640&q=80';
+import profileImg from '../../assets/profile-thumb.jpg';
 
 const bubbles = [
-  { className: 'left-2 top-4 h-2.5 w-2.5 bg-purple-400/70' },
-  { className: 'right-0 top-10 h-4 w-4 bg-purple-500/45' },
-  { className: '-left-3 bottom-8 h-3 w-3 bg-fuchsia-400/55' },
-  { className: 'right-4 bottom-2 h-2 w-2 bg-purple-300/60' },
-  { className: 'left-1/2 -top-2 h-2 w-2 -translate-x-1/2 bg-purple-400/50' },
+  { className: 'left-2 top-4 h-2.5 w-2.5 bg-purple-600/40' },
+  { className: 'right-0 top-10 h-4 w-4 bg-purple-700/30' },
+  { className: '-left-3 bottom-8 h-3 w-3 bg-fuchsia-700/30' },
+  { className: 'right-4 bottom-2 h-2 w-2 bg-purple-500/35' },
+  { className: 'left-1/2 -top-2 h-2 w-2 -translate-x-1/2 bg-purple-600/30' },
 ];
 
 export default function ProfileCard({ variants }) {
@@ -27,7 +25,7 @@ export default function ProfileCard({ variants }) {
               aria-hidden
             />
           ))}
-          <div className="relative rounded-full bg-gradient-to-br from-fuchsia-400/90 via-purple-400/80 to-indigo-500/85 p-[10px] shadow-[0_0_40px_rgba(168,85,247,0.35)]">
+          <div className="relative rounded-full bg-gradient-to-br from-fuchsia-800/55 via-purple-800/50 to-indigo-900/60 p-[10px] shadow-[0_0_28px_rgba(88,28,135,0.22)]">
             <img
               src={profileImg}
               alt="Joban Kang"

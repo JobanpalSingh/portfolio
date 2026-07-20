@@ -1,18 +1,22 @@
 import { motion } from 'framer-motion';
+import IconBadge from '../common/IconBadge.jsx';
 
 export default function StrengthBar({ skills, variants }) {
   return (
     <motion.div
       variants={variants}
-      className="glass-panel flex flex-wrap items-center justify-between gap-3 rounded-[2rem] px-5 py-5 sm:gap-4 sm:px-8 sm:py-6"
+      className="glass-panel flex flex-wrap items-center justify-center gap-4 rounded-[2rem] px-5 py-5 sm:justify-between sm:gap-3 sm:px-8 sm:py-6"
     >
-      {skills.map((skill) => (
-        <div key={skill} className="group relative flex flex-col items-center">
-          <span
-            className="block h-9 w-9 rounded-full bg-gradient-to-br from-purple-500 to-purple-800 shadow-[0_0_14px_rgba(168,85,247,0.35)] transition group-hover:scale-110 sm:h-10 sm:w-10"
-            title={skill}
+      {skills.map(({ label, icon }) => (
+        <div key={label} className="group relative flex flex-col items-center gap-1.5">
+          <IconBadge
+            icon={icon}
+            size="md"
+            className="transition group-hover:scale-110 sm:h-10 sm:w-10"
           />
-          <span className="sr-only">{skill}</span>
+          <span className="max-w-[4.5rem] text-center text-[10px] font-medium leading-tight text-slate-400 opacity-0 transition group-hover:opacity-100 sm:text-[11px]">
+            {label}
+          </span>
         </div>
       ))}
     </motion.div>

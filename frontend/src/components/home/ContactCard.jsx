@@ -6,8 +6,8 @@ import CardSectionHeader from './CardSectionHeader.jsx';
 function ContactRow({ icon: Icon, children }) {
   return (
     <li className="flex items-start gap-3 text-sm text-slate-200/95">
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-600/35 ring-1 ring-purple-400/25">
-        <Icon className="h-3.5 w-3.5 text-purple-200" />
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-900/45 ring-1 ring-purple-700/25">
+        <Icon className="h-3.5 w-3.5 text-purple-300/85" />
       </span>
       <span className="pt-1 leading-relaxed">{children}</span>
     </li>
